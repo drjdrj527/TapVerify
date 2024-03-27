@@ -1,0 +1,8 @@
+CREATE TABLE EspData ( -- Create a table named EspData
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, -- Define a column named id as an unsigned integer with auto-increment and primary key constraints
+    Name VARCHAR(30) NOT NULL, -- Define a column named Name as a variable character string with a maximum length of 30 characters and not null constraint
+    reading_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- Define a column named reading_time as a timestamp with a default value of the current timestamp
+);
+
+ALTER TABLE EspData -- Alter the table EspData
+MODIFY COLUMN reading_time TIMESTAMP DEFAULT CONVERT_TZ(NOW(),'+00:00','+05:30'); -- Modify the reading_time column to set the default timestamp to the current timestamp in the specified time zone
